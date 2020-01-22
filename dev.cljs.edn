@@ -1,0 +1,11 @@
+^{:launch-js ["npm" "start"] ;; For Windows, change this to ["npm.cmd" "start"]
+                             ;; Suggestions gratefully received for a way to make this automatic
+  :watch-dirs ["src/config/dev" "src/main" "src/renderer" "src/test"]
+  :extra-main-files {:renderer {:main patroclus.renderer.core
+                                :output-to "bin/renderer.js"}
+                     :tests {:main patroclus.test.runner-visual
+                             :output-to "bin/tests.js"}}}
+{:main patroclus.main.core
+ :output-dir "cljs-temp"
+ :output-to "bin/main.js"
+ :target :nodejs}

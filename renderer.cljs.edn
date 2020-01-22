@@ -1,0 +1,5 @@
+^{:launch-node false}
+{:main patroclus.renderer.core
+ :output-dir "cljs-temp"
+ :output-to "bin/renderer.js"
+ :target :nodejs}

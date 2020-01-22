@@ -1,0 +1,5 @@
+^{:launch-node false}
+{:main patroclus.main.core
+ :output-dir "cljs-temp"
+ :output-to "bin/main.js"
+ :target :nodejs}

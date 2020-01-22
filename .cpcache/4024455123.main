@@ -1,0 +1,1 @@
+--main figwheel.main --build dev --repl

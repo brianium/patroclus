@@ -1,0 +1,5 @@
+^{:launch-js ["npm" "start"]}
+{:main patroclus.test.runner-cmdline
+ :output-dir "cljs-temp"
+ :output-to "bin/main.js"
+ :target :nodejs}
