@@ -7,5 +7,7 @@
                              :output-to "bin/tests.js"}}}
 {:main patroclus.main.core
  :output-dir "cljs-temp"
+ :log-file "figwheel-main.log"
+ :log-level :all
  :output-to "bin/main.js"
  :target :nodejs}

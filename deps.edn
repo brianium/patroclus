@@ -3,7 +3,8 @@
         org.clojure/core.async {:mvn/version "0.7.559"}
         com.bhauman/rebel-readline-cljs {:mvn/version "0.1.4"}
         com.bhauman/figwheel-main {:mvn/version "0.2.3"}
-        reagent {:mvn/version "0.9.0-rc3" :exclusions [cljsjs/react cljsjs/react-dom]}}
+        reagent {:mvn/version "0.9.0-rc3" :exclusions [cljsjs/react cljsjs/react-dom]}
+        herb {:mvn/version "0.10.0"}}
  :paths ["src/main" "src/renderer"]
  :aliases {:main {:extra-paths ["src/main" "src/config/prod"]
                   :main-opts ["--main" "figwheel.main"
@@ -13,7 +14,11 @@
                       :main-opts ["--main" "figwheel.main"
                                   "--optimizations" "simple"
                                   "--build-once" "renderer"]}
-           :dev {:extra-paths ["src/main" "src/renderer" "src/config/dev" "src/test"]}
+           :dev-cider {:extra-paths ["src/main" "src/renderer" "src/config/dev" "src/test"]}
+           :dev {:extra-paths ["src/main" "src/renderer" "src/config/dev" "src/test"]
+                 :main-opts ["--main" "figwheel.main"
+                             "--build" "dev"
+                             "--repl"]}
            :test {:extra-paths ["src/main" "src/renderer" "src/config/dev" "src/test"]
                   :main-opts ["--main" "figwheel.main"
                               "--compile-opts" "test.cljs.edn"

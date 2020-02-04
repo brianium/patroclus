@@ -4,7 +4,7 @@
   "main": "bin/main.js",
   "scripts": {
     "start": "electron .",
-    "package": "electron-packager . --out executables --ignore '.*\\.edn' --ignore '.cpcache' --ignore '.gitignore' --ignore 'readme.md' --ignore 'src' --ignore 'cljs-temp' --ignore 'resources/index-dev.html' --ignore 'resources/test.html'"
+    "package": "electron-packager . --out executables --ignore '.*\\.edn' --ignore '.cpcache' --ignore '.gitignore' --ignore 'readme.md' --ignore 'src' --ignore 'cljs-temp' --ignore 'resources/index-dev.html' --ignore 'resources/test.html' --icon='Patroclus.icns' --app-bundle-id='patroclus'"
   },
   "devDependencies": {
     "electron": ">=7.1.0",
@@ -14,7 +14,9 @@
   },
   "dependencies": {
     "cap": "^0.2.1",
+    "electron-store": "^5.1.0",
     "ip": "^1.1.5",
+    "node-notifier": "^6.0.0",
     "react": ">=16.12.0",
     "react-dom": ">=16.12.0"
   }

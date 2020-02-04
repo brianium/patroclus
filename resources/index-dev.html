@@ -3,8 +3,9 @@
   <head>
     <meta charset="UTF-8">
     <!-- unsafe-eval and connect-src are necessary to enable Figwheel -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-eval'; connect-src ws://localhost:9500">
-    <title>patroclus yall</title>
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-eval'; connect-src ws://localhost:9500; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Serif+SC|Righteous&display=swap" rel="stylesheet">
+    <title>Patroclus Configuration</title>
   </head>
   <body>
     <div id="app" />
