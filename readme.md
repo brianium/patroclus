@@ -111,4 +111,4 @@ I couldn't really find a gui notification library for Java/Clojure that seemed l
 
 I built this for me, and I may use it for a while. If someone else finds it fun and useful then I will raise my glass to that!
 
-This silly little app was made on top a bunch of very useful libraries made by people who are much smarter than me. Paul Butcher's [electron-app](https://github.com/paulbutcher/electron-app)clj template allowed me to just focus on writing Clojure. It is an excellent starting point for ClojureScript based electron apps.
+This silly little app was made on top a bunch of very useful libraries made by people who are much smarter than me. Paul Butcher's [electron-app](https://github.com/paulbutcher/electron-app) clj template allowed me to just focus on writing ClojureScript. It is an excellent starting point for ClojureScript based electron apps.
