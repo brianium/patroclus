@@ -6,6 +6,9 @@
             [patroclus.renderer.address :as addr]
             [clojure.string :as str]))
 
+(defonce *state (r/atom {:domains (str/join "\n" (addr/domains))
+                         :message nil}))
+
 (def color-primary "#3D5ECC")
 
 (def heading-font "Righteous, cursive")
@@ -26,7 +29,6 @@
    :border-radius "4px"
    :color color-primary
    :cursor "pointer"
-   :display "block"
    :font-family text-font
    :font-size "18px"
    :margin-top "25px"
@@ -36,6 +38,14 @@
 (defn button
   [props text]
   [:button (merge props {:class (<class button-style)}) text])
+
+(defn message-style []
+  {:color        "#cecece"
+   :font-size    "14px"
+   :padding-left "5px"})
+
+(defn message [txt]
+  [:span {:class (<class message-style)} txt])
 
 (defn heading-style []
   {:color color-primary
@@ -52,8 +62,6 @@
 (defn text-area-style []
   {:font-family text-font})
 
-(defonce *state (r/atom {:domains (str/join "\n" (addr/domains))}))
-
 (defn update-domains
   [domains]
   (swap! *state assoc :domains domains))
@@ -66,7 +74,9 @@
 (defn save-domains'
   [domains]
   (doseq [domain domains]
-    (send "domain:save" domain)))
+    (send "domain:save" domain))
+  (swap! *state assoc :message "Addresses updated :)")
+  (js/setTimeout #(swap! *state assoc :message nil) 5000))
 
 (defn save-domains
   [domains]
@@ -93,7 +103,9 @@
         :on-change   on-domains-change
         :value       (:domains state)
         :placeholder "reddit.com\nyoutube.com\nfacebook.com"}]
-      [button {:type "submit"} "Save"]]]))
+      [button {:type "submit"} "Save"]
+      (when-some [txt (:message state)]
+        [message txt])]]))
 
 (defn start []
   (r/render [config-screen]

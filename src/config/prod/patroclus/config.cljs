@@ -9,4 +9,7 @@
 (def tray-icon
   (.resolve path (js* "__dirname") "../../app/resources/patroclus-ico.png"))
 
+(def icns
+  (.resolve path (js* "__dirname") "../../app/resources/Patroclus.icns"))
+
 (def notification-interval (* 1000 60 10))

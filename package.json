@@ -1,10 +1,11 @@
 {
   "name": "patroclus",
-  "version": "0.1.0",
+  "version": "0.1.5",
   "main": "bin/main.js",
   "scripts": {
     "start": "electron .",
-    "package": "electron-packager . --out executables --ignore '.*\\.edn' --ignore '.cpcache' --ignore '.gitignore' --ignore 'readme.md' --ignore 'src' --ignore 'cljs-temp' --ignore 'resources/index-dev.html' --ignore 'resources/test.html' --icon='Patroclus.icns' --app-bundle-id='patroclus'"
+    "package": "electron-packager . --out executables --ignore '.*\\.edn' --ignore '.cpcache' --ignore '.gitignore' --ignore 'readme.md' --ignore 'src' --ignore 'cljs-temp' --ignore 'resources/index-dev.html' --ignore 'resources/test.html' --icon='resources/Patroclus.icns' --app-bundle-id='patroclus' --platform='darwin'",
+    "prepare": "rm -rf executables && clj -A:main && clj -A:renderer && npm run package"
   },
   "devDependencies": {
     "electron": ">=7.1.0",
@@ -16,8 +17,8 @@
     "cap": "^0.2.1",
     "electron-store": "^5.1.0",
     "ip": "^1.1.5",
-    "node-notifier": "^6.0.0",
     "react": ">=16.12.0",
-    "react-dom": ">=16.12.0"
+    "react-dom": ">=16.12.0",
+    "sudo-prompt": "^9.1.1"
   }
 }
