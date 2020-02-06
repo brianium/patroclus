@@ -110,3 +110,5 @@ I used [core.async](https://github.com/clojure/core.async) for message passing a
 I couldn't really find a gui notification library for Java/Clojure that seemed like what I was after. Most of the Java based packet sniffing libraries looked cumbersome to work with, and the nodejs lib [cap](https://www.npmjs.com/package/cap) was easy to use and bundle with the finished product (including native deps).
 
 I built this for me, and I may use it for a while. If someone else finds it fun and useful then I will raise my glass to that!
+
+This silly little app was made on top a bunch of very useful libraries made by people who are much smarter than me. Paul Butcher's [electron-app](https://github.com/paulbutcher/electron-app)clj template allowed me to just focus on writing Clojure. It is an excellent starting point for ClojureScript based electron apps.
