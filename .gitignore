@@ -1,4 +1,5 @@
 node_modules
+.rebel_readline_history
 .nrepl-port
 .cpcache
 cljs-temp
