@@ -25,7 +25,7 @@
   (.exec sudo "chmod o+r /dev/bpf*" #js {:name "Patroclus" :icns config/icns}
     (fn [err]
       (when err
-        (throw err))
+        (.quit app))
       (ready-fn))))
 
 (defn start []
